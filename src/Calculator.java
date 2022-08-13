@@ -9,18 +9,18 @@ public class Calculator extends JFrame implements ActionListener {
     int k = 1, x = 0, y = 0, z = 0;
     char ch;
     Container cont;
-    JPanel buttonpanel;
+    JPanel buttonPanel;
 
     void registerButton(String text){
         JButton btn = new JButton(text);
-        buttonpanel.add(btn);
+        buttonPanel.add(btn);
         btn.addActionListener(this);
     }
 
     Calculator() {
         cont = getContentPane();
         cont.setLayout(new BorderLayout());
-        JPanel textpanel = new JPanel();
+        JPanel textPanel = new JPanel();
         tfield = new JTextField(25);
         tfield.setHorizontalAlignment(SwingConstants.RIGHT);
         tfield.addKeyListener(new KeyAdapter() {
@@ -31,9 +31,9 @@ public class Calculator extends JFrame implements ActionListener {
                 }
             }
         });
-        textpanel.add(tfield);
-        buttonpanel = new JPanel();
-        buttonpanel.setLayout(new GridLayout(8, 4, 10, 10));
+        textPanel.add(tfield);
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(8, 4, 10, 10));
         registerButton("MR");
         registerButton("MC");
         registerButton("M+");
@@ -69,8 +69,8 @@ public class Calculator extends JFrame implements ActionListener {
         registerButton("n!");
         registerButton("AC");
 
-        cont.add("Center", buttonpanel);
-        cont.add("North", textpanel);
+        cont.add("Center", buttonPanel);
+        cont.add("North", textPanel);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -252,14 +252,13 @@ public class Calculator extends JFrame implements ActionListener {
             if (tfield.getText().equals("")) {
                 tfield.setText("");
                 temp = 0;
-                ch = '-';
             } else {
                 x = 0;
                 y = 0;
                 temp = Double.parseDouble(tfield.getText());
                 tfield.setText("");
-                ch = '-';
             }
+            ch = '-';
             tfield.requestFocus();
         }
         if (s.equals("÷")) {
@@ -388,11 +387,6 @@ public class Calculator extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
         Calculator f = new Calculator();
         f.setTitle("Scientific Calculator");
         f.pack();
