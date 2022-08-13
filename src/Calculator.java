@@ -14,6 +14,7 @@ public class Calculator extends JFrame implements ActionListener {
         for(String text: buttons){
             JButton btn = new JButton(text);
             buttonPanel.add(btn);
+            btn.setFont(new Font("Comic Sans", Font.BOLD,18));
             btn.addActionListener(this);   
         }
     }
@@ -63,6 +64,7 @@ public class Calculator extends JFrame implements ActionListener {
         cont.setLayout(new BorderLayout());
         JPanel textPanel = new JPanel();
         tfield = new JTextField(25);
+        tfield.setFont(new Font("Comic Sans", Font.BOLD, 18));
         tfield.setHorizontalAlignment(SwingConstants.RIGHT);
         tfield.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent keyevent) {
