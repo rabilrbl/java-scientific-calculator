@@ -86,7 +86,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "1");
                     z = 0;
                 }
-
+            break;
             case "2":
                 if (z == 0) {
                     tfield.setText(tfield.getText() + "2");
@@ -95,7 +95,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "2");
                     z = 0;
                 }
-
+                break;
             case "3":
                 if (z == 0) {
                     tfield.setText(tfield.getText() + "3");
@@ -104,7 +104,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "3");
                     z = 0;
                 }
-
+                break;
             case "4":
                 if (z == 0) {
                     tfield.setText(tfield.getText() + "4");
@@ -113,7 +113,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "4");
                     z = 0;
                 }
-
+                break;
             case "5":
                 if (z == 0) {
                     tfield.setText(tfield.getText() + "5");
@@ -122,7 +122,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "5");
                     z = 0;
                 }
-
+                break;
             case "6":
                 if (z == 0) {
                     tfield.setText(tfield.getText() + "6");
@@ -131,7 +131,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "6");
                     z = 0;
                 }
-
+                break;
             case "7":
                 if (z == 0) {
                     tfield.setText(tfield.getText() + "7");
@@ -140,7 +140,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "7");
                     z = 0;
                 }
-
+                break;
             case "8":
                 if (z == 0) {
                     tfield.setText(tfield.getText() + "8");
@@ -149,7 +149,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "8");
                     z = 0;
                 }
-
+                break;
             case "9":
                 if (z == 0) {
                     tfield.setText(tfield.getText() + "9");
@@ -158,7 +158,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "9");
                     z = 0;
                 }
-
+                break;
             case "0":
                 if (z == 0) {
                     tfield.setText(tfield.getText() + "0");
@@ -167,13 +167,13 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + "0");
                     z = 0;
                 }
-
+                break;
             case "AC":
                 tfield.setText("");
                 x = 0;
                 y = 0;
                 z = 0;
-
+                break;
             case "log":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -182,7 +182,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
+                break;
             case "1/x":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -191,8 +191,8 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
-            case "e":
+                break;
+            case "ℯ":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
                 } else {
@@ -200,7 +200,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
+                break;
             case "x²":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -209,7 +209,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
+                break;
             case "x³":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -218,7 +218,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
+                break;
             case "+/-":
                 if (x == 0) {
                     tfield.setText("-" + tfield.getText());
@@ -226,7 +226,7 @@ public class Calculator extends JFrame implements ActionListener {
                 } else {
                     tfield.setText(tfield.getText());
                 }
-
+                break;
             case ".":
                 if (y == 0) {
                     tfield.setText(tfield.getText() + ".");
@@ -234,7 +234,7 @@ public class Calculator extends JFrame implements ActionListener {
                 } else {
                     tfield.setText(tfield.getText());
                 }
-
+                break;
             case "+":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -248,7 +248,7 @@ public class Calculator extends JFrame implements ActionListener {
                     x = 0;
                 }
                 tfield.requestFocus();
-
+                break;
             case "-":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -262,7 +262,7 @@ public class Calculator extends JFrame implements ActionListener {
                     ch = '-';
                 }
                 tfield.requestFocus();
-
+                break;
             case "÷":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -276,7 +276,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                 }
                 tfield.requestFocus();
-
+                break;
             case "×":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -290,15 +290,15 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                 }
                 tfield.requestFocus();
-
+                break;
             case "MC":
                 m1 = 0;
                 tfield.setText("");
-
+                break;
             case "MR":
                 tfield.setText("");
                 tfield.setText(tfield.getText() + m1);
-
+                break;
             case "M+":
                 if (k == 1) {
                     m1 = Double.parseDouble(tfield.getText());
@@ -307,7 +307,7 @@ public class Calculator extends JFrame implements ActionListener {
                     m1 += Double.parseDouble(tfield.getText());
                     tfield.setText("" + m1);
                 }
-
+                break;
             case "M-":
                 if (k == 1) {
                     m1 = Double.parseDouble(tfield.getText());
@@ -316,7 +316,7 @@ public class Calculator extends JFrame implements ActionListener {
                     m1 -= Double.parseDouble(tfield.getText());
                     tfield.setText("" + m1);
                 }
-
+                break;
             case "√":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -325,8 +325,8 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
-            case "√z":
+                break;
+            case "sin":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
                 } else {
@@ -334,7 +334,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
+                break;
             case "cos":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -343,7 +343,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
+                break;
             case "tan":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -352,7 +352,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
+                break;
             case "=":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -368,7 +368,7 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText(tfield.getText() + result);
                     z = 1;
                 }
-
+                break;
             case "n!":
                 if (tfield.getText().equals("")) {
                     tfield.setText("");
@@ -377,7 +377,9 @@ public class Calculator extends JFrame implements ActionListener {
                     tfield.setText("");
                     tfield.setText(tfield.getText() + a);
                 }
-
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + s);
         }
         tfield.requestFocus();
     }
