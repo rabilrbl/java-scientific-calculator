@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e466d151-b367-4ce1-8413-42bdbbf013a0" name="Changes" comment="Intialize calculator" />
+    <list default="true" id="e466d151-b367-4ce1-8413-42bdbbf013a0" name="Changes" comment="Refactor and fix switch cases">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660415801391</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactor and fix switch cases">
+      <created>1660421740834</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660421740834</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,7 +119,8 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Second Commit" />
     <MESSAGE value="Intialize calculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Intialize calculator" />
+    <MESSAGE value="Refactor and fix switch cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor and fix switch cases" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

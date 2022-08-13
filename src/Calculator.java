@@ -9,18 +9,44 @@ public class Calculator extends JFrame implements ActionListener {
     int k = 1, x = 0, y = 0, z = 0;
     char ch;
     Container cont;
-    JPanel buttonpanel;
+    JPanel buttonPanel;
 
-    void registerButton(String text){
+    void addBtn(String text){
         JButton btn = new JButton(text);
-        buttonpanel.add(btn);
+        buttonPanel.add(btn);
         btn.addActionListener(this);
+    }
+
+    void handleNumber(String num){
+        if (z == 0) {
+            tfield.setText(tfield.getText() + num);
+        } else {
+            tfield.setText("");
+            tfield.setText(tfield.getText() + num);
+            z = 0;
+        }
+    }
+
+    void handleFraction(double a){
+        if (tfield.getText().equals("")) {
+            tfield.setText("");
+        } else {
+            tfield.setText("");
+            tfield.setText(tfield.getText() + a);
+        }
+    }
+
+    double fact(double x) {
+        if ( x == 1 || x == 0 ) {
+            return 1;
+        }
+        return x * fact(x-1);
     }
 
     Calculator() {
         cont = getContentPane();
         cont.setLayout(new BorderLayout());
-        JPanel textpanel = new JPanel();
+        JPanel textPanel = new JPanel();
         tfield = new JTextField(25);
         tfield.setHorizontalAlignment(SwingConstants.RIGHT);
         tfield.addKeyListener(new KeyAdapter() {
@@ -31,46 +57,46 @@ public class Calculator extends JFrame implements ActionListener {
                 }
             }
         });
-        textpanel.add(tfield);
-        buttonpanel = new JPanel();
-        buttonpanel.setLayout(new GridLayout(8, 4, 10, 10));
-        registerButton("MR");
-        registerButton("MC");
-        registerButton("M+");
-        registerButton("M-");
+        textPanel.add(tfield);
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(8, 4, 10, 10));
+        addBtn("MR");
+        addBtn("MC");
+        addBtn("M+");
+        addBtn("M-");
 
-        registerButton("1");
-        registerButton("2");
-        registerButton("3");
-        registerButton("4");
-        registerButton("5");
-        registerButton("6");
-        registerButton("7");
-        registerButton("8");
-        registerButton("9");
-        registerButton("0");
+        addBtn("1");
+        addBtn("2");
+        addBtn("3");
+        addBtn("4");
+        addBtn("5");
+        addBtn("6");
+        addBtn("7");
+        addBtn("8");
+        addBtn("9");
+        addBtn("0");
 
-        registerButton("+");
-        registerButton("-");
-        registerButton("×");
-        registerButton("÷");
-        registerButton("+/-");
-        registerButton(".");
-        registerButton("=");
-        registerButton("1/x");
-        registerButton("√");
-        registerButton("log");
-        registerButton("sin");
-        registerButton("cos");
-        registerButton("tan");
-        registerButton("x²");
-        registerButton("x³");
-        registerButton("ℯ");
-        registerButton("n!");
-        registerButton("AC");
+        addBtn("+");
+        addBtn("-");
+        addBtn("×");
+        addBtn("÷");
+        addBtn("+/-");
+        addBtn(".");
+        addBtn("=");
+        addBtn("1/x");
+        addBtn("√");
+        addBtn("log");
+        addBtn("sin");
+        addBtn("cos");
+        addBtn("tan");
+        addBtn("x²");
+        addBtn("x³");
+        addBtn("ℯ");
+        addBtn("n!");
+        addBtn("AC");
 
-        cont.add("Center", buttonpanel);
-        cont.add("North", textpanel);
+        cont.add("Center", buttonPanel);
+        cont.add("North", textPanel);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -79,94 +105,16 @@ public class Calculator extends JFrame implements ActionListener {
         String s = e.getActionCommand();
         switch(s) {
             case "1":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "1");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "1");
-                    z = 0;
-                }
-            break;
             case "2":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "2");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "2");
-                    z = 0;
-                }
-                break;
             case "3":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "3");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "3");
-                    z = 0;
-                }
-                break;
             case "4":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "4");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "4");
-                    z = 0;
-                }
-                break;
             case "5":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "5");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "5");
-                    z = 0;
-                }
-                break;
             case "6":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "6");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "6");
-                    z = 0;
-                }
-                break;
             case "7":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "7");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "7");
-                    z = 0;
-                }
-                break;
             case "8":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "8");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "8");
-                    z = 0;
-                }
-                break;
             case "9":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "9");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "9");
-                    z = 0;
-                }
-                break;
             case "0":
-                if (z == 0) {
-                    tfield.setText(tfield.getText() + "0");
-                } else {
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + "0");
-                    z = 0;
-                }
+                handleNumber(s);
                 break;
             case "AC":
                 tfield.setText("");
@@ -175,49 +123,24 @@ public class Calculator extends JFrame implements ActionListener {
                 z = 0;
                 break;
             case "log":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = Math.log(Double.parseDouble(tfield.getText()));
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = Math.log(Double.parseDouble(tfield.getText()));
+                handleFraction(a);
                 break;
             case "1/x":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = 1 / Double.parseDouble(tfield.getText());
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = 1 / Double.parseDouble(tfield.getText());
+                handleFraction(a);
                 break;
             case "ℯ":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = Math.exp(Double.parseDouble(tfield.getText()));
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = Math.exp(Double.parseDouble(tfield.getText()));
+                handleFraction(a);
                 break;
             case "x²":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = Math.pow(Double.parseDouble(tfield.getText()), 2);
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = Math.pow(Double.parseDouble(tfield.getText()), 2);
+                handleFraction(a);
                 break;
             case "x³":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = Math.pow(Double.parseDouble(tfield.getText()), 3);
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = Math.pow(Double.parseDouble(tfield.getText()), 3);
+                handleFraction(a);
                 break;
             case "+/-":
                 if (x == 0) {
@@ -318,40 +241,20 @@ public class Calculator extends JFrame implements ActionListener {
                 }
                 break;
             case "√":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = Math.sqrt(Double.parseDouble(tfield.getText()));
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = Math.sqrt(Double.parseDouble(tfield.getText()));
+                handleFraction(a);
                 break;
             case "sin":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = Math.sin(Double.parseDouble(tfield.getText()));
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = Math.sin(Double.parseDouble(tfield.getText()));
+                handleFraction(a);
                 break;
             case "cos":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = Math.cos(Double.parseDouble(tfield.getText()));
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = Math.cos(Double.parseDouble(tfield.getText()));
+                handleFraction(a);
                 break;
             case "tan":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = Math.tan(Double.parseDouble(tfield.getText()));
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = Math.tan(Double.parseDouble(tfield.getText()));
+                handleFraction(a);
                 break;
             case "=":
                 if (tfield.getText().equals("")) {
@@ -370,13 +273,8 @@ public class Calculator extends JFrame implements ActionListener {
                 }
                 break;
             case "n!":
-                if (tfield.getText().equals("")) {
-                    tfield.setText("");
-                } else {
-                    a = fact(Double.parseDouble(tfield.getText()));
-                    tfield.setText("");
-                    tfield.setText(tfield.getText() + a);
-                }
+                a = fact(Double.parseDouble(tfield.getText()));
+                handleFraction(a);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + s);
@@ -384,22 +282,10 @@ public class Calculator extends JFrame implements ActionListener {
         tfield.requestFocus();
     }
 
-    double fact(double x) {
-        if ( x == 1 || x == 0 ) {
-            return 1;
-        }
-        return x * fact(x-1);
-    }
-
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        Calculator f = new Calculator();
-        f.setTitle("Scientific Calculator");
-        f.pack();
-        f.setVisible(true);
+        Calculator calc = new Calculator();
+        calc.setTitle("Scientific Calculator"); // Window title
+        calc.pack();
+        calc.setVisible(true); // Make window visible
     }
 }
